@@ -63,7 +63,7 @@ const styles = theme => ({
 
 class Footer extends Component {
     render() {
-        const { classes, history, cart, onRoute } = this.props
+        const { classes, cart, onRoute } = this.props
         return (
             <div style={cart ? {top: 50, position: 'absolute'} : {bottom: 0}} className={classes.root}>
               <AppBar className={classes.bar} position="static">
@@ -73,7 +73,7 @@ class Footer extends Component {
                     Minha caixa
                 </Typography>
                 
-                    <ArrowUpward style={cart ? {transform: 'rotate(180deg)', marginRight: 5, marginBottom: 6} : {marginBottom: 0}} className={classes.icon} onClick={() => onRoute(history)} />
+                    <ArrowUpward style={cart ? {transform: 'rotate(180deg)', marginRight: 5, marginBottom: 6} : {marginBottom: 0}} className={classes.icon} onClick={() => onRoute()} />
                 
                 </Toolbar>
               </AppBar>

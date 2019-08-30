@@ -36,7 +36,7 @@ class Home extends Component {
         this.setState({search: e.target.value})
     }
 
-    onRoute = (history) => {
+    onRoute = () => {
         const { cart } = this.state
         this.setState({cart: !cart})   
     }

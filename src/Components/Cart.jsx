@@ -104,13 +104,13 @@ const styles = theme => ({
   },
   input: {
     display: 'none',
-  },
+  }
 })
 
 class Cart extends Component {
     listCard = (classes) => {
         return (
-        <Grid className={classes.space} container item xs={12} spacing={2}>
+        <Grid container item xs={12} spacing={2}>
          {data.map((item, index) =>
             <Grid key={index} item>
             <Card className={classes.card}>
@@ -152,7 +152,6 @@ class Cart extends Component {
     }
 
     render() {
-        console.log(this.props)
         const { classes } = this.props
         return (
         <React.Fragment>

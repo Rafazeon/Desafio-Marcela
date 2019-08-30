@@ -17,6 +17,11 @@ import Cart from './Cart'
 import Fade from 'react-reveal/Fade';
 
 const styles = theme => ({
+  root: {
+    [theme.breakpoints.up('lg')]: {
+      justifyContent: 'center',
+    },
+  },
   card: {
     maxWidth: 345,
     borderRadius: 15
@@ -61,7 +66,7 @@ const styles = theme => ({
     fontWeight: 500,
     color: '#000',
     marginBottom: theme.spacing(2)
-  },
+  }
 })
 
 class ListCard extends Component {
@@ -74,7 +79,7 @@ class ListCard extends Component {
 
     listCard = (classes) => {
         return (
-        <Grid className={classes.space} container item xs={12} spacing={2}>
+        <Grid className={classes.root} container item xs={12} spacing={2}>
          {this.filterCard().map((item, index) =>
             <Grid key={index} item>
             <Card className={classes.card}>
@@ -108,10 +113,10 @@ class ListCard extends Component {
         return (
         <React.Fragment>
         {!cart ?
-         <div>
+        <Fade>
             <div className={classes.txt}>Kits Avulsos</div>
             <div>{this.listCard(classes)}</div>
-         </div>
+         </Fade>
          :
          <Fade>
             <Cart />
